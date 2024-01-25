@@ -1,0 +1,14 @@
+
+<div class="mx-3 my-3">
+<div class="navbar">
+</div>
+<div class="banner">
+<h1>This are all the lists</h1>
+</div>
+<% @lists.each do |list| %>
+<ul>
+<i class="fa-solid fa-forward mx-1"></i> <%= link_to  list.name, list_path(list.id) %>
+</ul>
+<% end %>
+<button class="btn btn-outline-primary"><%= link_to "Want to add a new one?", new_list_path %></button>
+</div>

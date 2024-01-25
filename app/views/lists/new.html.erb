@@ -1,0 +1,9 @@
+
+
+<div class="mx-3 my-3">
+<h1>You can add a new list if you want!</h1>
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name %>
+  <%= f.button :submit, class: "btn btn-default btn-primary" %>
+<% end %>
+</div>
