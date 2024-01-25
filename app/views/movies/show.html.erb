@@ -1,3 +1,6 @@
 <h1 class="mx-2 my-3 text-center"> <%= @movie.title %> </h1>
-<div class="movie-card"> <%= image_tag @movie.poster_url, class: %>
+<div class="d-flex justify-content-center flex-column align-items-center mx-3 my-3"> <%= image_tag @movie.poster_url, class: "movie-card"%>
+<h3 class="pt-3">Overview</h3>
+<p class=""><%= @movie.overview %></p>
+<p><i class="fa-solid fa-star mx-1" style="color: #FFD43B;"></i><%= @movie.rating %></p>
 </div>
