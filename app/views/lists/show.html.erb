@@ -1,10 +1,12 @@
-<h1 class="mx-2 my-2">This is your list</h1>
+<h1 class="mx-3 my-3">This is your list</h1>
 <div class="mx-4 my-4 fw-bold text-center">
 <h3><%= @list.name %></h3>
+<%= cl_image_tag @list.photo.key, class: "movie-card" unless @list.photo.key.nil? %>
+<%= render "pictures"%>
 </div>
 <% @bookmarks.each do |bookmark| %>
-<div class ="mx-4 my-4 text-center"><%= bookmark.comment%> <%= link_to '<i class="fa-solid fa-trash px-2"></i>'.html_safe, bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
+<div class ="mx-4 my-4 text-center"><%= bookmark.comment %> <%= link_to '<i class="fa-solid fa-trash px-2"></i>'.html_safe, bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
 <% end %>
 <div class="mx-4 my-4 text-center">
-<%= link_to "Want to go back see them all?", lists_path %>
+<%= link_to '<button class="btn btn-primary">Go back!</button>'.html_safe, lists_path %>
 </div>

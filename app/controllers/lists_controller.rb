@@ -23,6 +23,12 @@ class ListsController < ApplicationController
     @bookmarks = @list.bookmarks
   end
 
+  def update
+    @list = List.find(params[:id])
+    @list.update(list_params)
+    redirect_to list_path
+  end
+
 
   private
 
@@ -31,7 +37,7 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 
 end
