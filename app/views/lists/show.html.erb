@@ -3,7 +3,7 @@
 <h3><%= @list.name %></h3>
 </div>
 <% @bookmarks.each do |bookmark| %>
-<div class ="mx-4 my-4 text-center"><%= bookmark.comment %></div>
+<div class ="mx-4 my-4 text-center"><%= bookmark.comment%> <%= link_to '<i class="fa-solid fa-trash px-2"></i>'.html_safe, bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
 <% end %>
 <div class="mx-4 my-4 text-center">
 <%= link_to "Want to go back see them all?", lists_path %>
